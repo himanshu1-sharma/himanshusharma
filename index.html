@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>strength Chart</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+    	<meta name="theme-color" content="#000000" />
+    	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+			font-family: sans-serif;
+		}
+		.container{
+			position: absolute;
+			width: 700px;
+			height: 600px;
+			/*border: 1px solid black;*/
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+		}
+		.mainBox{
+			width: 100%;
+			height: 60px;
+			/*background: #f00;*/
+			margin-top: 10px;
+			cursor: pointer;
+			display: flex;
+			margin-top: 1rem;
+		}
+		
+		.strengthBox{
+			width: 100%;
+			height: 70%;
+			border: 1px solid #fff;
+			background: #7d7d7d;
+		}
+		.strengthName{
+			width: 100%;
+			height: 30%;
+			display: flex;
+			justify-content: center;
+		}
+		.strengthName label{
+			font-size: 13px;
+			text-transform: capitalize;
+		}
+		.strength-line{
+			width: 20%;
+			height: 100%;
+
+		}
+		.exBad{
+			position: relative;
+		}
+		.exBad::before{
+			position: absolute;
+			content: '';
+			width: 0;
+		    height: 0;
+		    border-top: 20px solid white;
+    		border-right: 20px solid transparent;
+		}
+		.exBad::after{
+			position: absolute;
+			content: '';
+			width: 0;
+		    height: 0;
+		    border-bottom: 20px solid white;
+    		border-right: 20px solid transparent;
+    		bottom: 0;
+		}
+		.exGood{
+			position: relative;
+		}
+		.exGood::before{
+			position: absolute;
+			content: '';
+			width: 0;
+		    height: 0;
+		    border-top: 20px solid white;
+    		border-left: 20px solid transparent;
+    		right: 0;
+		}
+		.exGood::after{
+			position: absolute;
+			content: '';
+			width: 0;
+		    height: 0;
+		    border-bottom: 20px solid white;
+    		border-left: 20px solid transparent;
+    		bottom: 0;
+    		right: 0;
+		}
+		
+		.container p{
+			font-size: 18px;
+			text-align: center;
+			margin-top: 2rem;
+		}
+		.btn-box{
+			display: flex;
+			justify-content: center;
+		}
+		.btn-box button{
+			padding: 10px 40px;
+			background: #7d7d7d;
+			border: none;
+			outline: none;
+			color: #fff;
+			margin: 1.5rem auto;
+			text-align: center;
+			transition: 0.5s;
+		}
+		hr{
+			margin-top: 2rem;
+		}
+		.orange{
+			background: #ff8243;
+			transition: 0.5s;
+		}
+		.yellow{
+			background: #ffa500;
+			transition: 0.5s;
+		}
+		.green{
+			background: #74c365;
+			transition: 0.5s;
+		}
+		.darkGreen{
+			background: #059033;
+			transition: 0.5s;
+		}
+	</style>
+</head>
+<body>
+
+	<section class="container">
+		<p>Responsiveness</p>
+		<div class="mainBox">
+			<div class="strength-line">
+				<div class="strengthName">
+				<label>Extremely bad</label>
+				</div>
+				<div class="strengthBox exBad" id="exBad">
+					
+				</div>
+			</div>
+
+			<div class="strength-line">
+				<div class="strengthName">
+				<label>bad</label>
+				</div>
+				<div class="strengthBox" id="bad">
+					
+				</div>
+			</div>
+
+			<div class="strength-line">
+				<div class="strengthName">
+				<label>natural</label>
+				</div>
+				<div class="strengthBox" id="natural">
+					
+				</div>
+			</div>
+
+			<div class="strength-line">
+				<div class="strengthName">
+				<label>good</label>
+				</div>
+				<div class="strengthBox" id="good">
+					
+				</div>
+			</div>
+
+			<div class="strength-line">
+				<div class="strengthName">
+				<label>Extremely good</label>
+				</div>
+				<div class="strengthBox exGood" id="exGood">
+					
+				</div>
+			</div>
+		</div>
+
+<!-- ----------------------------2nd-------------------- -->
+
+		<p>Competency in advising right solutions</p>
+		<div class="mainBox">
+			<div class="strength-line">
+				<div class="strengthName">
+				<label>Extremely bad</label>
+				</div>
+				<div class="strengthBox exBad" id="exBad1">
+					
+				</div>
+			</div>
+
+			<div class="strength-line">
+				<div class="strengthName">
+				<label>bad</label>
+				</div>
+				<div class="strengthBox" id="bad1">
+					
+				</div>
+			</div>
+
+			<div class="strength-line">
+				<div class="strengthName">
+				<label>natural</label>
+				</div>
+				<div class="strengthBox" id="natural1">
+					
+				</div>
+			</div>
+
+			<div class="strength-line">
+				<div class="strengthName">
+				<label>good</label>
+				</div>
+				<div class="strengthBox" id="good1">
+					
+				</div>
+			</div>
+
+			<div class="strength-line">
+				<div class="strengthName">
+				<label>Extremely good</label>
+				</div>
+				<div class="strengthBox exGood" id="exGood1">
+					
+				</div>
+			</div>
+		</div>
+
+		<!-- ---------------------------3rd------------- -->
+
+		<p>Trustworthiness</p>
+		<div class="mainBox">
+			<div class="strength-line">
+				<div class="strengthName">
+				<label>Extremely bad</label>
+				</div>
+				<div class="strengthBox exBad" id="exBad2">
+					
+				</div>
+			</div>
+
+			<div class="strength-line">
+				<div class="strengthName">
+				<label>bad</label>
+				</div>
+				<div class="strengthBox" id="bad2">
+					
+				</div>
+			</div>
+
+			<div class="strength-line">
+				<div class="strengthName">
+				<label>natural</label>
+				</div>
+				<div class="strengthBox" id="natural2">
+					
+				</div>
+			</div>
+
+			<div class="strength-line">
+				<div class="strengthName">
+				<label>good</label>
+				</div>
+				<div class="strengthBox" id="good2">
+					
+				</div>
+			</div>
+
+			<div class="strength-line">
+				<div class="strengthName">
+				<label>Extremely good</label>
+				</div>
+				<div class="strengthBox exGood" id="exGood2">
+					
+				</div>
+			</div>
+		</div>
+
+		<p>Customer service and support</p>
+		<div class="mainBox">
+			<div class="strength-line">
+				<div class="strengthName">
+				<label>Extremely bad</label>
+				</div>
+				<div class="strengthBox exBad" id="exBad3">
+					
+				</div>
+			</div>
+
+			<div class="strength-line">
+				<div class="strengthName">
+				<label>bad</label>
+				</div>
+				<div class="strengthBox" id="bad3">
+					
+				</div>
+			</div>
+
+			<div class="strength-line">
+				<div class="strengthName">
+				<label>natural</label>
+				</div>
+				<div class="strengthBox" id="natural3">
+					
+				</div>
+			</div>
+
+			<div class="strength-line">
+				<div class="strengthName">
+				<label>good</label>
+				</div>
+				<div class="strengthBox" id="good3">
+					
+				</div>
+			</div>
+
+			<div class="strength-line">
+				<div class="strengthName">
+				<label>Extremely good</label>
+				</div>
+				<div class="strengthBox exGood" id="exGood3">
+					
+				</div>
+			</div>
+		</div>
+		<hr>
+		<div class="btn-box">
+			
+			<button id="btn">Next</button>
+		</div>
+	</section>
+
+	<script>
+
+		var a = false;
+		var b = false;
+		var c = false;
+		var d = false;
+
+		$(document).ready(function(){
+			$("#bad").hover(function(){
+				$("#bad,#exBad").addClass("orange");
+
+				a = true;
+
+				checkNext();
+			});
+		});
+
+		$(document).ready(function(){
+			$("#exBad").hover(function(){
+				$("#exBad").addClass("orange");
+
+				a = true;
+
+				checkNext();
+			});
+		});
+
+		$(document).ready(function(){
+			$("#natural").hover(function(){
+				$("#natural,#bad,#exBad").addClass("yellow");
+
+				a = true;
+
+				checkNext();
+			});
+		});
+
+		$(document).ready(function(){
+			$("#good").hover(function(){
+				$("#good,#natural,#bad,#exBad").addClass("green");
+
+				a = true;
+
+				checkNext();
+			});
+		});
+
+		$(document).ready(function(){
+			$("#exGood").hover(function(){
+				$("#exGood,#good,#natural,#bad,#exBad").addClass("darkGreen");
+
+				a = true;
+
+				checkNext();
+			});
+		});
+
+		// ----------remove class--------------
+
+		$(document).ready(function(){
+			$("#bad").hover(function(){
+				$("#exGood,#good,#natural,#bad,#exBad").removeClass(["darkGreen","green","yellow"]);
+			});
+		});
+
+
+		$(document).ready(function(){
+			$("#natural").hover(function(){
+				$("#exGood,#good,#natural,#bad,#exBad").removeClass(["darkGreen","green"]);
+			});
+		});
+
+		$(document).ready(function(){
+			$("#good").hover(function(){
+				$("#exGood,#good,#natural,#bad,#exBad").removeClass(["darkGreen"]);
+			});
+		});
+		// ------------------------2nd-----------
+
+
+		$(document).ready(function(){
+			$("#bad1").hover(function(){
+				$("#bad1,#exBad1").addClass("orange");
+
+				b = true;
+
+				checkNext();
+			});
+		});
+
+		$(document).ready(function(){
+			$("#exBad1").hover(function(){
+				$("#exBad1").addClass("orange");
+
+				b = true;
+
+				checkNext();
+			});
+		});
+
+		$(document).ready(function(){
+			$("#natural1").hover(function(){
+				$("#natural1,#bad1,#exBad1").addClass("yellow");
+
+				b = true;
+
+				checkNext();
+			});
+		});
+
+		$(document).ready(function(){
+			$("#good1").hover(function(){
+				$("#good1,#natural1,#bad1,#exBad1").addClass("green");
+
+				b = true;
+
+				checkNext();
+			});
+		});
+
+		$(document).ready(function(){
+			$("#exGood1").hover(function(){
+				$("#exGood1,#good1,#natural1,#bad1,#exBad1").addClass("darkGreen");
+
+				b = true;
+
+				checkNext();
+			});
+		});
+
+		// ----------remove class--------------
+
+		$(document).ready(function(){
+			$("#bad1").hover(function(){
+				$("#exGood1,#good1,#natural1,#bad1,#exBad1").removeClass(["darkGreen","green","yellow"]);
+			});
+		});
+
+
+		$(document).ready(function(){
+			$("#natural1").hover(function(){
+				$("#exGood1,#good1,#natural1,#bad1,#exBad1").removeClass(["darkGreen","green"]);
+			});
+		});
+
+		$(document).ready(function(){
+			$("#good1").hover(function(){
+				$("#exGood1,#good1,#natural1,#bad1,#exBad1").removeClass(["darkGreen"]);
+			});
+		});
+
+		// ------------------------3rd-----------
+
+
+		$(document).ready(function(){
+			$("#bad2").hover(function(){
+				$("#bad2,#exBad2").addClass("orange");
+
+				c = true;
+
+				checkNext();
+			});
+		});
+
+		$(document).ready(function(){
+			$("#exBad2").hover(function(){
+				$("#exBad2").addClass("orange");
+
+				c = true;
+
+				checkNext();
+			});
+		});
+
+		$(document).ready(function(){
+			$("#natural2").hover(function(){
+				$("#natural2,#bad2,#exBad2").addClass("yellow");
+
+				c = true;
+
+				checkNext();
+			});
+		});
+
+		$(document).ready(function(){
+			$("#good2").hover(function(){
+				$("#good2,#natural2,#bad2,#exBad2").addClass("green");
+
+				c = true;
+
+				checkNext();
+			});
+		});
+
+		$(document).ready(function(){
+			$("#exGood2").hover(function(){
+				$("#exGood2,#good2,#natural2,#bad2,#exBad2").addClass("darkGreen");
+
+				c = true;
+
+				checkNext();
+			});
+		});
+
+
+		// ----------remove class--------------
+
+		$(document).ready(function(){
+			$("#bad2").hover(function(){
+				$("#exGood2,#good2,#natural2,#bad2,#exBad2").removeClass(["darkGreen","green","yellow"]);
+			});
+		});
+
+
+		$(document).ready(function(){
+			$("#natural2").hover(function(){
+				$("#exGood2,#good2,#natural2,#bad2,#exBad2").removeClass(["darkGreen","green"]);
+			});
+		});
+
+		$(document).ready(function(){
+			$("#good2").hover(function(){
+				$("#exGood2,#good2,#natural2,#bad2,#exBad2").removeClass(["darkGreen"]);
+			});
+		});
+		// ------------------------4th-----------
+
+
+		$(document).ready(function(){
+			$("#bad3").hover(function(){
+				$("#bad3,#exBad3").addClass("orange");
+
+				d = true;
+
+				checkNext();
+			});
+		});
+
+		$(document).ready(function(){
+			$("#exBad3").hover(function(){
+				$("#exBad3").addClass("orange");
+
+				d = true;
+
+				checkNext();
+			});
+		});
+
+		$(document).ready(function(){
+			$("#natural3").hover(function(){
+				$("#natural3,#bad3,#exBad3").addClass("yellow");
+
+				d = true;
+
+				checkNext();
+			});
+		});
+
+		$(document).ready(function(){
+			$("#good3").hover(function(){
+				$("#good3,#natural3,#bad3,#exBad3").addClass("green");
+
+				d = true;
+
+				checkNext();
+			});
+		});
+
+		$(document).ready(function(){
+			$("#exGood3").hover(function(){
+				$("#exGood3,#good3,#natural3,#bad3,#exBad3").addClass("darkGreen");
+
+				d = true;
+
+				checkNext();
+			});
+		});
+
+		// ----------remove class--------------
+
+		$(document).ready(function(){
+			$("#bad3").hover(function(){
+				$("#exGood3,#good3,#natural3,#bad3,#exBad3").removeClass(["darkGreen","green","yellow"]);
+			});
+		});
+
+
+		$(document).ready(function(){
+			$("#natural3").hover(function(){
+				$("#exGood3,#good3,#natural3,#bad3,#exBad3").removeClass(["darkGreen","green"]);
+			});
+		});
+
+		$(document).ready(function(){
+			$("#good3").hover(function(){
+				$("#exGood3,#good3,#natural3,#bad3,#exBad3").removeClass(["darkGreen"]);
+			});
+		});
+
+
+
+		function checkNext(){
+			if (a == true && b == true && c == true && d == true) {
+				$("#btn").css("background-color", "#059033");
+			}
+		}
+	</script>
+
+</body>
+</html>
